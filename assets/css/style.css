@@ -1,0 +1,256 @@
+/* ===================================
+   🔷 Global Element Styles
+=================================== */
+h1, h2, h3, h4, h5, h6, p, a {
+    font-family: Raleway !important;
+}
+
+i {
+    font-family: 'FontAwesome' !important;
+}
+
+h3 {
+    font-size: 20px !important;
+    font-weight: 700 !important;
+}
+
+h4 {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    margin: 0 !important;
+}
+
+p {
+    font-size: 16px !important;
+}
+
+
+/* ===================================
+   🔷 Header Section (ID: #header_top)
+=================================== */
+header#header_top {
+    background: #ffffff;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+header#header_top .right_box {
+    display: flex;
+    align-items: center;
+}
+
+header#header_top .right_box ul.tab_item {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header#header_top .right_box ul.tab_item li {
+    list-style: none;
+    margin: 0 13px;
+}
+
+header#header_top .right_box ul.tab_item li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: transparent;
+    background: #F8F8F8;
+    width: 40px;
+    height: 40px;
+    border-radius: 9px;
+    line-height: 40px;
+    display: block;
+    text-align: center;
+    -webkit-text-stroke: 1px black;
+}
+
+header#header_top .user_box {
+    color: #000000;
+    font-size: 19px;
+    font-weight: 500;
+    padding: 0px 10px 0px 20px;
+}
+
+header#header_top .user_box img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 90px;
+    margin-right: 8px;
+}
+
+header#header_top .user_box i {
+    font-size: 15px;
+}
+
+
+/* ===================================
+   🔷 Page Layout (Classes)
+=================================== */
+.page_content_box {
+    padding: 20px 20px 20px;
+    border-top: 0px solid white;
+    border-left: 10px solid white;
+    border-right: 10px solid white;
+    border-bottom: 0;
+    border-radius: 24px;
+    background: #F9F9F9;
+    min-height: 90vh;
+}
+
+.page_content div#page_box_main {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    height: 100%;
+    margin: 0 20px;
+}
+
+
+/* ===================================
+   🔷 Left Sidebar (ID: #sidebar)
+=================================== */
+div#sidebar {
+    background: #ffffff;
+    padding: 10px 20px;
+    border-radius: 19px;
+}
+
+div#sidebar ul {
+    margin: 0;
+    padding: 0;
+}
+
+div#sidebar li.item-list {
+    margin: 0;
+    list-style: none;
+    transition: 0.5s;
+}
+
+div#sidebar li.item-list a {
+    padding: 14px 15px 14px 25px;
+    color: black;
+    display: block;
+    text-decoration: none;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.5s;
+}
+
+div#sidebar li.item-list a img.icon {
+    position: relative;
+    top: -3px;
+    width: 18px;
+    margin-right: 14px;
+    filter: brightness(0);
+    transition: 0.5s;
+}
+
+div#sidebar li.item-list.active a {
+    background: #9D1686;
+    color: white;
+}
+
+div#sidebar li.item-list.active a img {
+    filter: brightness(0) invert(1);
+}
+
+
+/* ===================================
+   🔷 Right Sidebar (ID: #right_sidebar)
+=================================== */
+div#right_sidebar {
+    background: #ffffff;
+    padding: 20px 20px 30px;
+    border-radius: 19px;
+    max-height: fit-content;
+}
+
+div#right_sidebar .title_box {
+    padding: 7px 0 19px;
+}
+
+div#right_sidebar .head-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0px;
+    border-top: 1px solid #cccccc2e;
+    border-bottom: 1px solid #cccccc2e;
+}
+
+div#right_sidebar .tabs-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0px;
+    border-bottom: 1px solid #cccccc2e;
+    align-items: center;
+}
+
+div#right_sidebar .tabs-row .box1 {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+div#right_sidebar .tabs-row p,
+div#right_sidebar .tabs-row h4 {
+    margin: 0;
+}
+
+div#right_sidebar .tabs-row p {
+    font-size: 14px !important;
+}
+
+div#right_sidebar .tabs-row h3 {
+    font-family: Pridi !important;
+    font-weight: 500 !important;
+    font-size: 25px !important;
+}
+
+div#right_sidebar .tabs-row img.icon {
+    width: 45px;
+}
+
+div#right_sidebar .right_box {
+    width: 100px;
+    text-align: center;
+}
+
+div#right_sidebar h3 {
+    margin: 0;
+}
+
+div#right_sidebar button#view {
+    background: #9D1686;
+    border: none;
+    padding: 6px 23px;
+    font-size: 15px;
+    border-radius: 7px;
+    font-family: 'Raleway';
+    font-weight: 600;
+}
+
+
+
+
+
+@media (max-width: 992px) {
+
+
+.page_content div#page_box_main {
+    margin: 0px 0px 20px;
+}
+
+.page_content_box {
+    flex-direction: column;
+}
+
+.page_content_box div#sidebar {
+    display: none;
+}
+
+
+
+}
