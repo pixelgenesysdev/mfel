@@ -14,7 +14,7 @@
     <div id="right_box" class="content-box">
             
             <div class="logo-image">
-                <a href="<?php echo SITE_URL; ?>"><img src="<?php echo SITE_URL; ?>assets/images/icon_big.png" alt="Hero Image" class="img-fluid"></a>
+                <a href="<?php echo SITE_URL; ?>pages/dashboard.php"><img src="<?php echo SITE_URL; ?>assets/images/icon_big.png" alt="Hero Image" class="img-fluid"></a>
             </div>
             <div class="form-container">
                     <h2>Let's start my five elements life!</h2>

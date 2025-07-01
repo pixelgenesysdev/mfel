@@ -1,0 +1,327 @@
+/* Step Form CSS */
+
+      .page {
+          max-height: 100%;
+          height: 100%;
+      }
+
+
+
+    .progress-box {
+    background: #F8F8F8;
+    border-radius: 20px;
+    position: relative;
+    height: 60px;
+    border-radius: 100px;
+    width: 100%;
+    margin: 30px 0px 0;
+    }
+
+    .progress-box div#energyPercentage {
+        margin: 0;
+        position: absolute;
+        right: 8px;
+        top: 50%;
+        transform: translatey(-50%);
+        font-family: 'Raleway';
+        font-weight: 800;
+        font-size: 19px;
+        z-index:9;
+        top: 50%;
+    }
+
+    .progress-box .energy-slider::-webkit-slider-thumb {
+        background: #88ca03;
+        height: 65px;
+        width: 65px;
+        border: none;
+        position: relative;
+        
+      } 
+
+
+    .progress-bar {
+      width: 100%;
+      height: 30px;
+      background: #e0e0e0;
+      border-radius: 15px;
+      margin: 20px 0;
+      overflow: hidden;
+      position: relative;
+    }
+    .progress {
+      height: 100%;
+      transition: width 0.5s ease-in-out, background-color 0.5s ease-in-out;
+      position: absolute;
+      left: 0;
+    }
+
+
+
+    button.step-form  {
+    background: #9d1686;
+    border: none;
+    padding: 8px 40px;
+    font-size: 20px;
+    font-family: 'Raleway';
+    font-weight: 500;
+    width: fit-content;
+    margin: 40px auto 0;
+    border-radius: 10px;
+    display: table;
+    }
+
+    
+    .page .inner_box {
+        display: grid;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        text-align: center;
+        height: 100%;
+        justify-items: center;
+    }
+
+    .page .inner_box img.single_main_image {
+        width: 190px;
+        margin-bottom: 20px;
+    }
+
+    .page .inner_box p {
+        margin: 0;
+    }
+
+
+    #energyPercentage {
+      font-size: 20px;
+      margin-top: 10px;
+    }
+    .energy-slider {
+      -webkit-appearance: none;
+      width: 100%;
+      outline: none;
+      height: 100%;
+      border-radius: 100px;
+      background: transparent;
+    }
+    .energy-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      background: #fff;
+      border: 2px solid #000;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .battery-levels {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+    .battery-levels img {
+      width: 40px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .battery-levels img:hover {
+      transform: scale(1.1);
+    }
+    .sleep-container {
+      margin: 20px 0;
+    }
+    .sleep-emoji {
+      width: 80px;
+      margin-bottom: 10px;
+    }
+    .sleep-text {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .sleep-time {
+      font-size: 48px;
+      color: #000;
+      margin: 20px 0;
+      font-weight: bold;
+    }
+    .sleep-labels {
+      display: flex;
+      justify-content: center;
+      font-size: 16px;
+      color: #666;
+      margin-top: 10px;
+    }
+    .sleep-labels span {
+      margin: 0 20px;
+    }
+    .sleep-inputs {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+      align-items: center;
+    }
+    .sleep-inputs span {
+        font-size: 40px;
+    }
+  .sleep-inputs input[type=number]::-webkit-inner-spin-button,
+  .sleep-inputs input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    .sleep-inputs input {
+      width: 100PX;
+      padding: 10px;
+      font-size: 48px;
+      border: none;
+      border-bottom: 2px solid #ddd;
+      text-align: center;
+      outline: none;
+      font-weight: 500;
+      font-family: 'Pridi';
+    }
+    .sleep-inputs input:focus {
+      border-bottom-color: #9d1686;
+    }
+
+
+     .mood-meter {
+      position: relative;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background-size: 100% 100%;
+    }
+
+    .mood-pointer {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 65px;
+      height: 80px;
+      background-color: transparent;
+      transform-origin: bottom center;
+      transform: translate(-50%, -100%) rotate(0deg);
+      border-radius: 3px;
+      transition: transform 0.8s ease-in-out, background-color 0.8s ease-in-out;
+      background-size: 100% 100%;
+    }
+
+    .mood-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      font-size: 44px;
+      background-size: 100% 100%;
+      color: white;
+    }
+
+    
+    .mood-icons {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .mood-icons img {
+      width: 75px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .mood-icons img:hover {
+      transform: scale(1.1);
+    }
+.stress-box button.stress-icons {
+    width: 60px;
+    height: 35px;
+    background-size: cover;
+    border: none !important;
+    background-position: center;
+    padding: 0;
+}
+
+.stress-box {
+    display: flex;
+    border-radius: 40px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+    .stress-meter {
+    position: relative;
+    width: 240px;
+    height: 240px;
+    background-size: 100% 100%;
+    }
+    .stress-center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+        font-size: 44px;
+        background-size: 100% 100%;
+        color: white;
+    }
+    .stress-pointer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 35px;
+    height: 70px;
+    background-color: transparent;
+    transform-origin: bottom center;
+    transform: translate(-50%, -100%) rotate(0deg);
+    border-radius: 3px;
+    transition: transform 0.8s ease-in-out, background-color 0.8s ease-in-out;
+    background-size: 100% 100%;
+    }
+    .stress-slider {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 10px;
+      background: linear-gradient(to right, #00cc99, #00ffcc, #99ff99, #ffff99, #ffcc00, #ff9900);
+      border-radius: 5px;
+      outline: none;
+      margin: 20px 0;
+    }
+    .stress-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      background: #fff;
+      border: 2px solid #000;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .button {
+      background: #8a4af3;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .button:hover {
+      background: #6d2dc1;
+    }
+    .hidden {
+      display: none;
+    }
+
+
+  

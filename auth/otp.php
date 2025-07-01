@@ -15,30 +15,30 @@
 
            
             <div class="form-container">
-            <h2>Enter OTP</h2>
-            <p class="description">An email has been sent to you with a verification code. Please enter it here.</p>
-            
-            <div class="otp-inputs">
-                <input type="text" class="otp-input" maxlength="1" pattern="[0-9]">
-                <input type="text" class="otp-input" maxlength="1" pattern="[0-9]">
-                <input type="text" class="otp-input" maxlength="1" pattern="[0-9]">
-                <input type="text" class="otp-input" maxlength="1" pattern="[0-9]">
-                <input type="text" class="otp-input" maxlength="1" pattern="[0-9]">
-                <input type="text" class="otp-input" maxlength="1" pattern="[0-9]">
+                    <h2>Enter OTP</h2>
+                    <p class="description">An email has been sent to you with a verification code. Please enter it here.</p>
+                <!--   <form action="" method="POST"> -->
+                    <div class="otp-inputs">
+                        <input type="text" class="otp-input" maxlength="1" pattern="[0-9]">
+                        <input type="text" class="otp-input" maxlength="1" pattern="[0-9]">
+                        <input type="text" class="otp-input" maxlength="1" pattern="[0-9]">
+                        <input type="text" class="otp-input" maxlength="1" pattern="[0-9]">
+                        <input type="text" class="otp-input" maxlength="1" pattern="[0-9]">
+                        <input type="text" class="otp-input" maxlength="1" pattern="[0-9]">
+                    </div>
+                    
+                    <button class="submit-btn btn" id="submit-otp" onclick='window.location.href = "reset-password.php";'>Submit</button>
+                    
+                    <div class="last-line timer">00:40</div>
+                    
+                    <div class=" last-line resend">
+                        <a href="#">Resend Code</a>
+                    </div>
+                <!-- </form> -->
+                    <div class="last-line back-link">
+                        <a href="login.php">Back to Login</a>
+                    </div>
             </div>
-            
-            <button class="submit-btn btn" id="submit-otp">Submit</button>
-            
-            <div class="last-line timer">00:40</div>
-            
-            <div class=" last-line resend">
-                <a href="#">Resend Code</a>
-            </div>
-            
-            <div class="last-line back-link">
-                <a href="login.php">Back to Login</a>
-            </div>
-        </div>
 
         <script>
             // OTP input auto-focus
@@ -57,12 +57,8 @@
                 });
             });
 
-            // Submit OTP and redirect to reset password
-            document.getElementById('submit-otp').addEventListener('click', function() {
-                // Here you would normally validate the OTP
-                // For demo, we'll just redirect
-                window.location.href = "reset-password.php";
-            });
+           
+           
         </script>
 
     </div>

@@ -1,0 +1,171 @@
+
+
+/* style css for tabs of tasks page */
+ 
+.tab.tasks_tab {
+        width: 360px;
+        margin: 10px auto;
+    }
+
+    .task-list {
+        margin: 50px 0 40px;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .task-list .task-item {
+        list-style: none;
+    }
+
+    .task-list .task-item .item_inner {
+        color: black;
+        display: flex;
+        background: white;
+        box-shadow: 0px 0px 11px 1px #cccccccc;
+        padding: 20px;
+        border-radius: 20px;
+        align-items: flex-start;
+        text-decoration: none;
+        gap: 22px;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+
+     .task-item  h3.task-title {padding: 0 !important;margin: 0;overflow: hidden;display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;}
+
+    .task-item .count {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 7px;
+        align-items: center;
+    }
+
+     .count span.task-count {
+        background: black;
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        line-height: 50px;
+        color: white;
+        font-size: 27px;
+        font-family: 'Pridi';
+    }
+
+    .task-item .count span.task-label {
+        font-weight: 700;
+        font-size: 18px;
+        font-family: 'Raleway';
+    }
+
+   .task-details {
+        width: 100%;
+    }
+
+    .short_detail .task-details p.task-description {
+        margin: 7px 0px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 1; /* number of lines to show */
+        -webkit-box-orient: vertical;
+    }
+
+  .task-details .progress {
+        width: 100%;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        height: fit-content;
+    }
+
+    .task-details progress {
+        width: 100%;
+    }
+
+
+
+    .progress span.progress-label {
+        font-size: 18px;
+        font-weight: 600;
+        font-family: 'Pridi';
+    }
+
+    .task-item .task-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+     .task-info img.task-icon {
+        width: 50px;
+    }
+
+    .task-info p.status {
+        margin: 0;
+        font-weight: 500;
+    }
+
+    /* Style the container */
+    .task-list .progress {
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Hide the default progress bar appearance */
+    .task-list progress {
+        width: 100%;
+        height: 6px;
+        -webkit-appearance: none;  /* Hide default progress in WebKit browsers */
+        appearance: none;
+        border-radius: 25px;
+        background-color: #e0e0e0;
+        box-shadow: none;
+    }
+
+    /* Customizing the progress "filled" part */
+    .task-list progress::-webkit-progress-bar {
+        background-color: #D9D9D9;
+        border-radius: 25px;
+    }
+
+    .task-list progress::-webkit-progress-value {
+        background-color: #000000; /* Green color for progress */
+        border-radius: 25px;
+    }
+
+    .task-list progress::-moz-progress-bar {
+        background-color: #000; /* For Firefox */
+        border-radius: 25px;
+    }
+
+
+    .long_detail .item_inner{
+        flex-direction: row-reverse;
+        align-items: flex-start;
+    }
+
+.task-list .task-item a.task-link .task-details h4.task-name {
+    font-size: 17px !important;
+    margin: 5px 0 5px !important;
+}.long_detail button.mark-complete.btn.btn-primary {
+    margin: 10px auto 0;
+    display: table;
+    font-size: 16px;
+    padding: 14px 30px;
+    min-width: 280px;
+}
+
+.content_box_tasks.long_detail {
+    padding: 20px 20px;
+    background: #F9F9F9;
+    border-radius: 30px;
+    margin-top: 40px !important;
+}
+
+.content_box_tasks.long_detail .task-list {
+    margin: 0;
+}

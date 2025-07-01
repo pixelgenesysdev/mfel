@@ -13,27 +13,31 @@
            
             <div class="form-container">
                 <h2>Create New Account!</h2>
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" placeholder="Enter username">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" placeholder="Enter your email address">
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" placeholder="Enter your password">
-                </div>
-                <div class="form-group">
-                    <label for="confirm-password">Confirm Password</label>
-                    <input type="password" id="confirm-password" placeholder="Enter confirm password">
-                </div>
-                <button class="btn">Sign Up</button>
-                <p class="text-center last-line">Already have an account? <a href="login.php" class="link">Sign In</a></p>
+                <!-- ✅ START: Form -->
+                <!-- <form action="" method="POST"> -->
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" name="name" id="username" placeholder="Enter username">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" name="email" id="email" placeholder="Enter your email address">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" placeholder="Enter your password">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm Password</label>
+                        <input type="password" name="confirm_password" id="confirm-password" placeholder="Enter confirm password">
+                    </div>
+                    <button class="btn">Sign Up</button>
+                    <p class="text-center last-line">Already have an account? <a href="login.php" class="link">Sign In</a></p>
+                <!-- </form> -->
+                 <!-- ✅ END: Form -->
+           
             </div>
 
-        </div>
     
     </div>
 

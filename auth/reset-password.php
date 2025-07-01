@@ -14,25 +14,25 @@
     <div id="right_box" class="content-box">
 
             <div class="form-container">
-            <h2>Reset Password</h2>
-            <p class="description">Please type your new password</p>
-            
-            <div class="form-group">
-                <label for="new-password">New Password</label>
-                <input type="password" id="new-password" placeholder="Enter your password">
+                <h2>Reset Password</h2>
+                <p class="description">Please type your new password</p>
+                <!-- <form action="" method="POST"> -->
+                    <div class="form-group">
+                        <label for="new-password">New Password</label>
+                        <input type="password" name="password" id="new-password" placeholder="Enter your password">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm Password</label>
+                        <input type="password" name="password" id="confirm-password" placeholder="Enter your confirm password">
+                    </div>
+                    
+                    <button class="submit-btn btn" id="update-password">Update</button>
+                <!-- </form> -->
+                <div class="back-link last-line">
+                    <a href="login.php">Back to Login</a>
+                </div>
             </div>
-            
-            <div class="form-group">
-                <label for="confirm-password">Confirm Password</label>
-                <input type="password" id="confirm-password" placeholder="Enter your confirm password">
-            </div>
-            
-            <button class="submit-btn btn" id="update-password">Update</button>
-            
-            <div class="back-link last-line">
-                <a href="login.php">Back to Login</a>
-            </div>
-        </div>
 
 
  <?php include $_SERVER['DOCUMENT_ROOT'] . '/wordpress_projects/mfel/auth/include/popup.php'; ?>
@@ -65,7 +65,7 @@
             
             document.getElementById('success-ok-btn').addEventListener('click', function() {
                 popup.classList.remove('active');
-                window.location.href = "login.php";
+                window.location.href = "<?php echo SITE_URL; ?>pages/dashboard.php";
             });
         }
 

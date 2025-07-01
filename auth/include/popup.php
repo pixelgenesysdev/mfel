@@ -8,7 +8,7 @@
                     <div class="popup-icon success-icon">✓</div>
                     <h3 class="popup-title">Success!</h3>
                     <p class="popup-message">Your password has been updated successfully.</p>
-                    <button class="popup-btn" id="success-ok-btn">OK</button>
+                    <button class="popup-btn" onclick="window.location.href = '<?php echo SITE_URL; ?>page/dashboard.php';" id="success-ok-btn">OK</button>
                 </div>
             </div>
 

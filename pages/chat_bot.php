@@ -1,4 +1,6 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/wordpress_projects/mfel/includes/head.php'; ?>
+<?php 
+include __DIR__ . '/../includes/head.php';
+?>
 
 <div id="page_box">
     <h1 class="page_title">Chat Bot</h1>
@@ -8,4 +10,6 @@
     </div>   
 </div>   
 
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/wordpress_projects/mfel/includes/footer.php'; ?>
+<?php 
+include __DIR__ . '/../includes/footer.php';
+?>

@@ -3,7 +3,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
 ?>
 
 <div id="sidebar" class="col-lg-2">
-    <nav id="sidebar_left">
+    <nav id="sidebar_left" class="animate-sidebar">
         <div class="box">
             <ul class="tab_item">
                 <li class="item-list <?php if ($current_page == 'dashboard.php') echo 'active'; ?>">
@@ -11,7 +11,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                         <img src="<?php echo SITE_URL; ?>assets/images/home_icon_sidebar.png" class="icon" alt="Home"> Home
                     </a>
                 </li>
-                <li class="item-list <?php if ($current_page == 'task.php') echo 'active'; ?>">
+                <li class="item-list <?php if ($current_page == 'task.php' || $current_page == 'task_details.php') echo 'active'; ?>">
                     <a href="<?php echo SITE_URL; ?>pages/task.php">
                         <img src="<?php echo SITE_URL; ?>assets/images/tasks_icon_sidebar.png" class="icon" alt="Task"> Task
                     </a>
@@ -21,12 +21,17 @@ $current_page = basename($_SERVER['PHP_SELF']);
                         <img src="<?php echo SITE_URL; ?>assets/images/chat_bot_icon_sidebar.png" class="icon" alt="Chat Bot"> Chat Bot
                     </a>
                 </li>
-                <li class="item-list <?php if ($current_page == 'goals.php') echo 'active'; ?>">
+                <li class="item-list <?php if ($current_page == 'goals.php' || $current_page == 'add_goals.php' || $current_page == 'goal_details.php') echo 'active'; ?>">
                     <a href="<?php echo SITE_URL; ?>pages/goals.php">
                         <img src="<?php echo SITE_URL; ?>assets/images/goals_icon_sidebar.png" class="icon" alt="Goals"> Goals
                     </a>
                 </li>
-                <li class="item-list <?php if ($current_page == 'self_vs.php') echo 'active'; ?>">
+                <li class="item-list <?php if ($current_page == 'media.php') echo 'active'; ?>">
+                    <a href="<?php echo SITE_URL; ?>pages/media.php">
+                        <img src="<?php echo SITE_URL; ?>assets/images/media_icon_sidebar.png" class="icon" alt="Media"> Media
+                    </a>
+                </li>
+                <li class="item-list <?php if ($current_page == 'self_vs.php' || $current_page == 'self_vs_edit.php') echo 'active'; ?>">
                     <a href="<?php echo SITE_URL; ?>pages/self_vs.php">
                         <img src="<?php echo SITE_URL; ?>assets/images/self_icon_sidebar.png" class="icon" alt="Self VS"> Self VS
                     </a>
@@ -57,6 +62,12 @@ $current_page = basename($_SERVER['PHP_SELF']);
                     </a>
                 </li>
             </ul>
+
+            <div class="logout-box">
+                <button class="logout-link" onclick="ShowLogoutSuccessPopup()">
+                    <img src="<?php echo SITE_URL; ?>assets/images/logout_icon_sidebar.png" class="icon" alt="Logout"> Logout
+                </button>
+            </div>
         </div>
     </nav>
 </div>

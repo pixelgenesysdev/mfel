@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Redirect requests with .php to clean URL
+RewriteCond %{THE_REQUEST} \s/+mfel/pages/([^\s]+)\.php [NC]
+RewriteRule ^mfel/pages/([^\./]+)\.php$ /mfel/pages/$1 [R=301,L]
+
+# Internally map clean URLs to .php files
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^mfel/pages/([^/]+)$ /mfel/pages/$1.php [L]
