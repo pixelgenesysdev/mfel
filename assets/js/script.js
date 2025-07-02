@@ -31,6 +31,10 @@
         });
     }
 
+    function closeLogoutPopup(){
+        const popup = document.getElementById('logout_success-popup');
+        popup.classList.remove('active');
+    }
     // Function to show the success popup for Contact form
 
     function ShowContactFormPopup() {

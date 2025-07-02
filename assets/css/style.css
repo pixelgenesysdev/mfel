@@ -8,7 +8,11 @@ h1, h2, h3, h4, h5, h6, p, a {
 i {
     font-family: 'FontAwesome' !important;
 }
-
+h1 {
+    font-weight: 700;
+    color: black;
+    font-size: 50px;
+}
 h3 {
     font-size: 25px !important;
     font-weight: 700 !important;
@@ -37,12 +41,13 @@ h2.page_title {
 button.btn-primary {
     background: #9D1686;
     border: none;
-    padding: 8px 30px;
-    font-size: 14px;
+    padding: 10px 30px;
+    font-size: 16px;
     border-radius: 7px;
     font-family: 'Raleway';
     font-weight: 600;
     width: fit-content;
+    color: white;
 }
 button.tablinks.metal {
     color: #abaaaa;

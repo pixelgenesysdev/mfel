@@ -47,7 +47,7 @@ include __DIR__ . '/../includes/head.php';
         <div class="title col-lg-12">Goals Management</div>
 
         <div class="card  col-lg-6">
-            <div class="card_inner"> 
+            <div class="card_inner" onclick="window.location.href = '<?php echo SITE_URL; ?>pages/goal_details.php';"> 
                 <div class="card-header">
                 <div class="leftop">
                         <div class="icon"><img src="<?php echo SITE_URL; ?>assets/images/fire_icon.png" alt=""></div>
@@ -72,7 +72,7 @@ include __DIR__ . '/../includes/head.php';
         </div>
 
         <div class="card  col-lg-6">
-            <div class="card_inner"> 
+            <div class="card_inner" onclick="window.location.href = '<?php echo SITE_URL; ?>pages/goal_details.php';"> 
                 <div class="card-header">
                 <div class="leftop">
                         <div class="icon"><img src="<?php echo SITE_URL; ?>assets/images/fire_icon.png" alt=""></div>
@@ -100,7 +100,8 @@ include __DIR__ . '/../includes/head.php';
 
 
 
-
+        
+    <div id="chart_div" style="width: 100%; height: 500px;"></div>
         
         <!-- Add more cards as needed -->
     </div>
@@ -108,6 +109,36 @@ include __DIR__ . '/../includes/head.php';
 
 
 </div>   
+
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year',  'profite'],
+          ['2013',      150],
+          ['2014',      350],
+          ['2015',      50],
+          ['2016',      650],
+          ['2017',     700],
+          ['2018',      250],
+          ['2019',      1250],
+          ['2020',      2150]
+        ]);
+
+        var options = {
+          title: 'Company Performance',
+          hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 0}
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
 
 <?php 
 include __DIR__ . '/../includes/footer.php';

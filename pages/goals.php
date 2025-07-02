@@ -6,7 +6,7 @@ include __DIR__ . '/../includes/head.php';
 
      
     <div class="cards goals_management row_box row d-flex flex-wrap ">
-        <div class="topbar  col-md-12 row d-flex align-items-center justify-content-between mb-3 mt-3">
+        <div class="topbar  col-md-12 d-flex align-items-center justify-content-between mb-3 mt-3">
             <h2 class="page_title">Goals</h2>
             <button class=" btn btn-primary btn-sm" type="button" id="view" onclick="window.location.href = '<?php echo SITE_URL; ?>pages/add_goals.php';" >Add Goals</button>
         </div>

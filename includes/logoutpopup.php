@@ -7,7 +7,7 @@
                     <p class="logout_popup-message">Are you sure you want to logout?</p>
                     <div class="but-box">    
                         <button id="logout_success-ok" class="logout_popup-btn" onclick="window.location.href = '<?php echo SITE_URL; ?>auth/landing.php';">Yes</button>
-                        <button class="logout_popup-btn" id="success-cancel-btn" onclick="window.location.href = '<?php echo SITE_URL; ?>pages/dashboard.php';">No</button>
+                        <button class="logout_popup-btn" id="success-cancel-btn" onclick="closeLogoutPopup()">No</button>
                     </div>                      
                 </div>
             </div> 

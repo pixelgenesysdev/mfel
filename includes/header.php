@@ -14,7 +14,7 @@
                         <span class="user_name">Jakob Botosh </span><i class="fa fa-angle-down"></i>
                     </button>
                     <div class="dropdown-content">
-                        <a href="">Profile</a>
+                        <a href="<?php echo SITE_URL; ?>/pages/my_profile.php">Profile</a>
                         <a href="<?php echo SITE_URL; ?>/auth/landing.php">Logout</a>
                     </div>
                 </div>
