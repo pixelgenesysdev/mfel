@@ -5,7 +5,34 @@
           height: 100%;
       }
 
+.progress-box #energySlider::-webkit-slider-thumb {
+    background: #88ca03;
+    height: 60px;
+    width: 60px;
+    transform:scale(1.4);
+    border: none;
+    border-radius: 300px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    margin-left:-1px;
+}
 
+/* Firefox */
+.progress-box #energySlider::-moz-range-thumb {
+    background: #88ca03;
+    height: 85px;
+    width: 85px;
+    border: none;
+    border-radius: 300px;
+    cursor: pointer;
+}
+
+.progress-box #energySlider {
+    appearance: none;
+    width: 100%;
+    background: #f8f8f8;
+}
 
     .progress-box {
     background: #F8F8F8;
@@ -14,30 +41,23 @@
     height: 60px;
     border-radius: 100px;
     width: 100%;
-    margin: 30px 0px 0;
+    margin: 80px 0px 0;
     }
 
     .progress-box div#energyPercentage {
         margin: 0;
         position: absolute;
         right: 8px;
-        top: 50%;
-        transform: translatey(-50%);
+        transform: translateX(-50%);
         font-family: 'Raleway';
         font-weight: 800;
-        font-size: 19px;
+        font-size: 25px;
         z-index:9;
-        top: 50%;
+        top: -55px;
+        left: 50%;
     }
 
-    .progress-box .energy-slider::-webkit-slider-thumb {
-        background: #88ca03;
-        height: 65px;
-        width: 65px;
-        border: none;
-        position: relative;
-        
-      } 
+  
 
 
     .progress-bar {
@@ -80,7 +100,9 @@
         text-align: center;
         height: 100%;
         justify-items: center;
-    }
+    }div#sleepPage img#sleepEmoji {
+    width: 300px;
+}
 
     .page .inner_box img.single_main_image {
         width: 190px;
@@ -96,15 +118,12 @@
       font-size: 20px;
       margin-top: 10px;
     }
-    .energy-slider {
-      -webkit-appearance: none;
-      width: 100%;
+    #energySlider {
       outline: none;
       height: 100%;
       border-radius: 100px;
-      background: transparent;
     }
-    .energy-slider::-webkit-slider-thumb {
+     #energySlider::-webkit-slider-thumb {
       -webkit-appearance: none;
       width: 20px;
       height: 20px;
@@ -231,10 +250,15 @@
       gap: 14px;
       flex-wrap: wrap;
     }
+    .mood-button.active {
+        transform: scale(1.2);
+        filter: drop-shadow(0px 0px 9px  #7e1170);
+    }
     .mood-icons img {
       width: 75px;
       cursor: pointer;
       transition: transform 0.2s;
+      transition: 0.5s;
     }
     .mood-icons img:hover {
       transform: scale(1.1);
@@ -323,5 +347,14 @@
       display: none;
     }
 
+.bg-ff4a35::-webkit-slider-thumb { background-color: #ff4a35 !important; }
+.bg-ff9c1b::-webkit-slider-thumb { background-color: #ff9c1b !important; }
+.bg-fff234::-webkit-slider-thumb { background-color: #fff234 !important; }
+.bg-d1e702::-webkit-slider-thumb { background-color: #d1e702 !important; }
+.bg-93d804::-webkit-slider-thumb { background-color: #93d804 !important; }
 
-  
+  input#energySlider:before {content: '\f0e7';position: absolute;top: 50%;left: 50%;font-size: 20px;font-family: 'FontAwesome';transform: translate(-50%,-50%);color: white;transition: 0.5s;opacity: 0;}
+
+input#energySlider.bg-93d804:before {
+    opacity: 1;
+}

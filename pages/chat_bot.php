@@ -4,8 +4,27 @@ include __DIR__ . '/../includes/head.php';
 
 <div id="page_box">
 
+       
+        
        <style>
-              
+               .chat-window .input-box {
+                    position: absolute;
+                    width: 100%;
+                    bottom: 8px;
+                    left: 50%;
+                    margin: 0;
+                    transform: translateX(-50%);
+                }
+
+                div#chatWindow {
+                    position: relative;
+                    min-height: 100%;
+                    width: 100%;
+                }
+
+                div#mesages-chat {
+                    margin-bottom: 5rem;
+                }
                 .chatbot-welcome {
                     display: flex;
                     flex-direction: column;
@@ -21,9 +40,9 @@ include __DIR__ . '/../includes/head.php';
                 .input-box {
                     display: flex;
                     align-items: center;
-                    background: #fff;
-                    border-radius: 25px;
-                    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                    background: #F8F8F8;
+                    border-radius: 7px;
+                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
                     margin: 40px 10px 10px;
                     padding: 5px 10px;
                 }
@@ -33,13 +52,14 @@ include __DIR__ . '/../includes/head.php';
                     outline: none;
                     padding: 10px;
                     border-radius: 25px;
+                    background: transparent;
                 }
                 .input-box button {
                     border: none;
                     background: #9d1686;
                     color: #fff;
                     padding: 10px 15px;
-                    border-radius: 50%;
+                    border-radius: 8px;
                     cursor: pointer;
                 }
 
@@ -57,7 +77,7 @@ include __DIR__ . '/../includes/head.php';
                 }
                 .user-message {
                     margin-left: auto;
-                    background: #e0f7fa;
+                    background: #f9f9f9;
                 }
                 .bot-message img {
                     max-width: 150px;
@@ -70,6 +90,7 @@ include __DIR__ . '/../includes/head.php';
                     text-align: right;
                 }
             </style>
+
 
 
 
@@ -93,24 +114,26 @@ include __DIR__ . '/../includes/head.php';
 
         <!-- Chat Window -->
         <div class="chat-window" id="chatWindow" style="display:none;">
-            <div class="message bot-message">
-                <p>Sed ut perspiciatis unde omnis iste natus</p>
-            </div>
-            <div class="message bot-message">
-                <p>accusantium doloremque laudantium, totam rem aperiam</p>
-                <p>Nemo enim ipsam voluptatem quia voluptas sit</p>
-                <div class="timestamp">15:42</div>
-            </div>
-            <div class="message user-message">
-                <p>Sed ut perspiciatis unde omnis iste natus</p>
-            </div>
-            <div class="message bot-message">
-                <p>accusantium doloremque laudantium, totam rem aperiam</p>
-                <p>Nemo enim ipsam voluptatem quia voluptas sit</p>
-                <div class="timestamp">15:42</div>
+            <div id="mesages-chat" class="mesages-chat">
+                <div class="message bot-message">
+                    <p>Sed ut perspiciatis unde omnis iste natus</p>
+                </div>
+                <div class="message bot-message">
+                    <p>accusantium doloremque laudantium, totam rem aperiam</p>
+                    <p>Nemo enim ipsam voluptatem quia voluptas sit</p>
+                    <div class="timestamp">15:42</div>
+                </div>
+                <div class="message user-message">
+                    <p>Sed ut perspiciatis unde omnis iste natus</p>
+                </div>
+                <div class="message bot-message">
+                    <p>accusantium doloremque laudantium, totam rem aperiam</p>
+                    <p>Nemo enim ipsam voluptatem quia voluptas sit</p>
+                    <div class="timestamp">15:42</div>
+                </div>
             </div>
 
-            <div class="input-box" style="position: sticky; bottom: 10px; background: #f9f9f9;">
+            <div class="input-box" style="">
                 <input type="text" placeholder="How can I help you?" id="userInput">
                 <button onclick="sendMessage()"><i class="fa-solid fa-paper-plane"></i></button>
             </div>
@@ -126,21 +149,52 @@ include __DIR__ . '/../includes/footer.php';
 ?>
 
 <script>
-    function startChat() {
-        document.getElementById('welcomeSection').style.display = 'none';
-        document.getElementById('chatWindow').style.display = 'block';
-    }
-
-    function sendMessage() {
-        let input = document.getElementById('userInput');
-        if (input.value.trim() !== "") {
-            let chatWindow = document.getElementById('chatWindow');
-            let userMsg = document.createElement('div');
-            userMsg.className = 'message user-message';
-            userMsg.innerHTML = '<p>' + input.value + '</p>';
-            chatWindow.insertBefore(userMsg, input.parentElement);
-            input.value = "";
-            chatWindow.scrollTop = chatWindow.scrollHeight;
+        function startChat() {
+            document.getElementById('welcomeSection').style.display = 'none';
+            document.getElementById('chatWindow').style.display = 'block';
         }
-    }
+
+        function sendMessage() {
+            let input = document.getElementById('userInput');
+            if (input.value.trim() !== "") {
+                let chatWindow = document.getElementById('mesages-chat');
+
+                // Create and insert user message
+                let userMsg = document.createElement('div');
+                userMsg.className = 'message user-message';
+                userMsg.innerHTML = '<p>' + input.value + '</p>';
+                chatWindow.appendChild(userMsg); // Append to the end
+
+                // Save user input and clear input field
+                let userText = input.value;
+                input.value = "";
+
+                // Scroll to bottom
+                chatWindow.scrollTop = chatWindow.scrollHeight;
+
+                // Simulate bot response after a short delay
+                setTimeout(() => {
+                    let botMsg = document.createElement('div');
+                    botMsg.className = 'message bot-message';
+
+                    // Simple auto-reply logic (can be enhanced)
+                    botMsg.innerHTML = '<p>You said: ' + userText + '</p>';
+
+                    // Optional: Add timestamp
+                    let timestamp = document.createElement('div');
+                    timestamp.className = 'timestamp';
+                    let now = new Date();
+                    timestamp.textContent = now.getHours().toString().padStart(2, '0') + ':' + 
+                                            now.getMinutes().toString().padStart(2, '0');
+
+                    botMsg.appendChild(timestamp);
+                    chatWindow.appendChild(botMsg);
+
+                    // Scroll to bottom
+                    chatWindow.scrollTop = chatWindow.scrollHeight;
+                }, 800); // 800ms delay
+            }
+        }
+
+
 </script>
