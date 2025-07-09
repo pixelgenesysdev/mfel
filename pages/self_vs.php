@@ -3,7 +3,6 @@ include __DIR__ . '/../includes/head.php';
 ?>
 
 
-
 <div id="page_box">
     <div class="topbar  col-lg-12 d-flex align-items-center justify-content-between mb-3 mt-3">
             <h2 class="page_title">Self Visualizing</h2>
@@ -18,7 +17,9 @@ include __DIR__ . '/../includes/head.php';
             try on new looks, this feature lets you visualize endless<br>
             possibilities.Let's have some fun with it!
         </p>
-        <img src="<?php echo SITE_URL; ?>assets/images/self_vs_button.png" alt="" style="cursor: pointer;" onclick="window.location.href = '<?php echo SITE_URL; ?>pages/self_vs_edit.php';">
+        <?php 
+        include __DIR__ . '/../pages/button.php';
+        ?>
     </div>
 </div>   
 

@@ -26,12 +26,12 @@ include __DIR__ . '/../includes/head.php';
         <div class="stress-box">
           <button class="stress-icons" style="background-image: url('<?php echo SITE_URL; ?>assets/images/metal_buttn_bg.png');" data-angle="-115" data-color="#ff4d4d" onclick="stressMood2(this)"></button>
           <button class="stress-icons" style="background-image: url('<?php echo SITE_URL; ?>assets/images/water_buttn_bg.png');" data-angle="-70" data-color="#ff8c1a" onclick="stressMood2(this)"></button>
-          <button class="stress-icons" style="background-image: url('<?php echo SITE_URL; ?>assets/images/wood_buttn_bg.png');" data-angle="-21" data-color="#ffd700" onclick="stressMood2(this)"></button>
+          <button class="stress-icons active" style="background-image: url('<?php echo SITE_URL; ?>assets/images/wood_buttn_bg.png');" data-angle="-21" data-color="#ffd700" onclick="stressMood2(this)"></button>
           <button class="stress-icons" style="background-image: url('<?php echo SITE_URL; ?>assets/images/fire_buttn_bg.png');" data-angle="22" data-color="#9acd32" onclick="stressMood2(this)"></button>
           <button class="stress-icons" style="background-image: url('<?php echo SITE_URL; ?>assets/images/earth_buttn_bg.png');" data-angle="70" data-color="#32cd32" onclick="stressMood2(this)"></button>
           <button class="stress-icons" style="background-image: url('<?php echo SITE_URL; ?>assets/images/button_bg.png');" data-angle="115" data-color="#32cd32" onclick="stressMood2(this)"></button>
         </div>
-        <button type="button" class="step-form btn btn-primary btn-sm" onclick="nextPage('moodPage')">Next</button>
+        <button type="button" class="step-form btn btn-primary btn-sm stress-button-button" id="step-form_button" onclick="nextPage('moodPage')">Next</button>
       </div>
     </div>
 
@@ -44,13 +44,13 @@ include __DIR__ . '/../includes/head.php';
         <h3>Mood Check!</h3>
         <p>Are you riding the wave of joy, or is today<br> a 'meh' kind of day?</p>
         <div class="mood-icons">
-          <img class="mood-button" src="<?php echo SITE_URL; ?>assets/images/mood-small_icon1.png" data-angle="191" id="moodIcon" data-color="#ff4d4d" onclick="updateMood(this)">
+          <img class="mood-button"  src="<?php echo SITE_URL; ?>assets/images/mood-small_icon1.png" data-angle="191" id="moodIcon" data-color="#ff4d4d" onclick="updateMood(this)">
           <img class="mood-button" src="<?php echo SITE_URL; ?>assets/images/mood-small_icon2.png" data-angle="260" id="moodIcon" data-color="#ff8c1a" onclick="updateMood(this)">
           <img class="mood-button" src="<?php echo SITE_URL; ?>assets/images/mood-small_icon3.png" data-angle="336" id="moodIcon" data-color="#ffd700" onclick="updateMood(this)">
           <img class="mood-button" src="<?php echo SITE_URL; ?>assets/images/mood-small_icon4.png" data-angle="50"  id="moodIcon" data-color="#9acd32" onclick="updateMood(this)">
           <img class="mood-button" src="<?php echo SITE_URL; ?>assets/images/mood-small_icon5.png" data-angle="118" id="moodIcon" data-color="#32cd32" onclick="updateMood(this)">
         </div>
-        <button type="button" class="step-form btn btn-primary btn-sm" onclick="nextPage('sleepPage')">Next</button>
+        <button type="button" class="step-form btn btn-primary btn-sm mood-button-form" id="step-form_button" onclick="nextPage('sleepPage')">Next</button>
       </div>
     </div>
 
@@ -65,7 +65,7 @@ include __DIR__ . '/../includes/head.php';
           <input type="number" id="sleepMinutes" min="0" max="59" placeholder="00" oninput="updateSleep()">
         </div>
 
-        <button type="button" class="step-form btn btn-primary btn-sm"  onclick="nextPage('energyPage')">Next</button>
+        <button type="button" class="step-form btn btn-primary btn-sm sleep-button-form" id="step-form_button" onclick="nextPage('energyPage')">Next</button>
       </div>
     </div>
 
@@ -138,9 +138,14 @@ include __DIR__ . '/../includes/head.php';
 
     // for step form 
     function nextPage(pageId) {
-      document.getElementById(currentPage).classList.add('hidden');
-      document.getElementById(pageId).classList.remove('hidden');
-      currentPage = pageId;
+
+
+
+          document.getElementById(currentPage).classList.add('hidden');
+          document.getElementById(pageId).classList.remove('hidden');
+          currentPage = pageId;
+   
+
     }
 
 
@@ -173,40 +178,59 @@ include __DIR__ . '/../includes/head.php';
 
     // for Mood Check! Meter
 
-    function updateMood(element) {
-      const angle = parseInt(element.getAttribute('data-angle'));
-      const color = element.getAttribute('data-color');
-      const pointer = document.getElementById('moodPointer');
-      const iconMood = document.getElementById('moodIcon');
 
-      // ✅ Remove 'active' from all mood buttons
-      const allMoodButtons = document.querySelectorAll('.mood-button'); // or your actual class
-      allMoodButtons.forEach(btn => btn.classList.remove('active'));
+    
 
-      // ✅ Add 'active' to clicked one
-      element.classList.add('active');
 
-   
+  function updateMood(element) {
+        const angle = parseInt(element.getAttribute('data-angle'));
+        const color = element.getAttribute('data-color');
+        const pointer = document.getElementById('moodPointer');
+        let iconMood = element.classList[1];
 
-      // ✅ Rotate pointer
-      pointer.style.transform = `translate(-50%, -100%) rotate(${angle}deg)`;
+        // ✅ Remove 'active' from all mood buttons
+        const allMoodButtons = document.querySelectorAll('.mood-button');
+        allMoodButtons.forEach(btn => btn.classList.remove('active'));
 
-      // ✅ Optionally change icon or pointer color
-      // iconMood.src = `path/to/icon-${color}.png`; // if mood changes icon
-    }
+        // ✅ Add 'active' to clicked element
+        element.classList.add('active');
+
+        console.log("Mood selected:",  {
+          angle: angle,
+          color: color,
+          element: element
+        });
+
+        // ✅ Rotate pointer
+        pointer.style.transform = `translate(-50%, -100%) rotate(${angle}deg)`;
+
+        // ✅ Optional: change pointer color (if needed)
+        // pointer.style.backgroundColor = color;
+
+  }
 
 
 
 
     
     function stressMood2(element) {
+            
             let angle = parseInt(element.getAttribute('data-angle'));
             let color = element.getAttribute('data-color');
             let pointer = document.getElementById('stressPointer');
+            let iconMood = document.getElementById('stressIcon');
+
+            // ✅ Remove 'active' from all mood buttons
+            const allMoodButtons = document.querySelectorAll('.stress-icons'); // or your actual class
+            allMoodButtons.forEach(btn => btn.classList.remove('active'));
+
+            // ✅ Add 'active' to clicked one
+            element.classList.add('active');
 
             pointer.style.transform = `translate(-50%, -100%) rotate(${angle}deg)`;
 
     }
+    
 
     function updateEnergyProgress(value) {
         const percentageDisplay = document.getElementById('energyPercentage');

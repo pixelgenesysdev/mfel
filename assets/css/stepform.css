@@ -271,11 +271,31 @@
     background-position: center;
     padding: 0;
 }
+button.stress-icons.active:before {
+    transition: 0.5s;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    content: '';
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+    bottom: -20px;
+    background: #D9D9D9;
+}
 
+button.stress-icons {
+    position: relative;
+}
+
+button.stress-icons:first-child {border-radius: 18px 0px 0 18px;}
+
+button.stress-icons:last-child {
+    border-radius: 0px 18px 18px 0px;
+}
 .stress-box {
     display: flex;
     border-radius: 40px;
-    overflow: hidden;
     margin-top: 20px;
 }
     .stress-meter {

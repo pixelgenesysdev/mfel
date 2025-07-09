@@ -11,7 +11,7 @@ include __DIR__ . '/../includes/head.php';
             <button class=" btn btn-primary btn-sm" type="button" id="view" onclick="window.location.href = '<?php echo SITE_URL; ?>pages/add_goals.php';" >Add Goals</button>
         </div>
         <div class="card fill fire col-lg-6">
-            <div class="card_inner" style="background-image: url('<?php echo SITE_URL; ?>assets/images/fire_card_bg.png');" onclick="window.location.href = '<?php echo SITE_URL; ?>pages/goal_details.php';"> 
+            <div class="card_inner" onclick="window.location.href = '<?php echo SITE_URL; ?>pages/goal_details.php';"> 
                 <div class="card-header">
                 <div class="leftop">
                         <div class="icon"><img src="<?php echo SITE_URL; ?>assets/images/fire_icon_white.png" alt=""></div>
@@ -36,7 +36,7 @@ include __DIR__ . '/../includes/head.php';
         </div>
 
         <div class="card fill water col-lg-6">
-            <div class="card_inner" style="background-image: url('<?php echo SITE_URL; ?>assets/images/water_card_bg.png');" onclick="window.location.href = '<?php echo SITE_URL; ?>pages/goal_details.php';"> 
+            <div class="card_inner" onclick="window.location.href = '<?php echo SITE_URL; ?>pages/goal_details.php';"> 
                 <div class="card-header">
                 <div class="leftop">
                         <div class="icon"><img src="<?php echo SITE_URL; ?>assets/images/water_icon_white.png" alt=""></div>
@@ -61,7 +61,7 @@ include __DIR__ . '/../includes/head.php';
         </div>
 
         <div class="card fill metal col-lg-6">
-            <div class="card_inner" style="background-image: url('<?php echo SITE_URL; ?>assets/images/metal_card_bg.png');" onclick="window.location.href = '<?php echo SITE_URL; ?>pages/goal_details.php';"> 
+            <div class="card_inner" onclick="window.location.href = '<?php echo SITE_URL; ?>pages/goal_details.php';"> 
                 <div class="card-header">
                 <div class="leftop">
                         <div class="icon"><img src="<?php echo SITE_URL; ?>assets/images/metal_icon_white.png" alt=""></div>
@@ -86,7 +86,7 @@ include __DIR__ . '/../includes/head.php';
         </div>
 
         <div class="card fill wood col-lg-6">
-            <div class="card_inner" style="background-image: url('<?php echo SITE_URL; ?>assets/images/wood_card_bg.png');" onclick="window.location.href = '<?php echo SITE_URL; ?>pages/goal_details.php';"> 
+            <div class="card_inner" onclick="window.location.href = '<?php echo SITE_URL; ?>pages/goal_details.php';"> 
                 <div class="card-header">
                 <div class="leftop">
                         <div class="icon"><img src="<?php echo SITE_URL; ?>assets/images/wood_icon_white.png" alt=""></div>

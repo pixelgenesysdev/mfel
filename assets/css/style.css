@@ -37,7 +37,9 @@ h2.page_title {
 .main_box {
     overflow: hidden;
 }   
-
+button.btn-primary:hover {
+    background: black;
+}
 button.btn-primary {
     background: #9D1686;
     border: none;
@@ -48,6 +50,7 @@ button.btn-primary {
     font-weight: 600;
     width: fit-content;
     color: white;
+    transition: 0.5s;
 }
 button.tablinks.metal {
     color: #abaaaa;
@@ -356,19 +359,19 @@ header#header_top .right_box ul.tab_item li#humberger a {
 =============================================== */
 
 @keyframes waveMove {
+   
+    
     0% {
-        background-position-x: 10000px;
+       background-position-x: 100%;
     }
-    50% {
-        background-position-x: -10000px;
-    }
-    100% {
-        background-position-x: 10000px;
+    
+     100% {
+        background-position-x: -46000%;
     }
 }
 
-.card_inner {
-    animation: waveMove 200s linear infinite;
+.card_inner:hover {
+    animation: waveMove 1000s linear infinite;
 } 
 
 
@@ -1377,3 +1380,4 @@ ul.video-list li.video-item {
 
 
 
+ 

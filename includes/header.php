@@ -120,3 +120,19 @@
 
 </script>
 
+
+<style>
+    .metal.card .card_inner{
+        background-image: url(<?php echo SITE_URL; ?>assets/images/metal_card_bg.png);
+    }
+     .fire.card .card_inner{
+        background-image: url(<?php echo SITE_URL; ?>assets/images/fire_card_bg.png);
+    }
+     .wood.card .card_inner{
+        background-image: url(<?php echo SITE_URL; ?>assets/images/wood_card_bg.png);
+    }
+     .water.card .card_inner{
+        background-image: url(<?php echo SITE_URL; ?>assets/images/water_card_bg.png);
+    }
+</style>
+
