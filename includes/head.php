@@ -1,6 +1,4 @@
-<?php error_reporting(0);
-include __DIR__ . '/../global.inc.php';
-?>
+<?php include __DIR__ . '/../global.inc.php'; ?>
 
 
 
@@ -40,11 +38,11 @@ include __DIR__ . '/../global.inc.php';
 <div class="main_box">
 
 
-   <?php include $_SERVER['DOCUMENT_ROOT'] . '/wordpress_projects/mfel/includes/header.php';?>
+   <?php include __DIR__ . '/../includes/header.php'; ?>
 
  <div class="page_content_box row d-flex">
 
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/wordpress_projects/mfel/includes/sidebar.php';?>
+    <?php include __DIR__ .  '/../includes/sidebar.php';?>
    
     <div class="page_content col-lg-7">
         <div id="page_box_main" class="animate-content">

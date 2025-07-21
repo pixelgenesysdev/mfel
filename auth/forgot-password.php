@@ -1,4 +1,4 @@
- <?php include $_SERVER['DOCUMENT_ROOT'] . '/wordpress_projects/mfel/auth/include/header.php'; ?>
+ <?php include __DIR__ .  '/../auth/include/header.php'; ?>
     
  
 
@@ -33,4 +33,4 @@
 </div>
 
 
- <?php include $_SERVER['DOCUMENT_ROOT'] . '/wordpress_projects/mfel/auth/include/footer.php'; ?>
+  <?php include __DIR__ .  '/../auth/include/footer.php'; ?>

@@ -573,7 +573,7 @@ header#header_top .user_box i {
 =================================== */
 div#sidebar {
     background: #ffffff;
-    padding: 20px 20px;
+    padding: 20px 15px;
     border-radius: 19px;
     overflow: hidden;
 }
@@ -615,7 +615,7 @@ div#sidebar li.item-list a {
     display: block;
     text-decoration: none;
     border-radius: 15px;
-    font-size: 16px;
+    font-size: 0.9vw;
     font-weight: 600;
     transition: 0.5s;
 }
@@ -1360,7 +1360,7 @@ div#right_sidebar h3 {
     height: auto;
 }
 ul.video-list li.video-item {
-    width: calc(100% / 2);
+    width: calc(100% / 4);
 }
 
 .tab button.tablinks {
@@ -1371,13 +1371,57 @@ ul.video-list li.video-item {
     display: block;
 }
 
-.audio_box ul.audio-list li.audio-item {
-    width: calc(100% / 1);
+
+.page_content.col-lg-7 {
+    padding: 0;
+}
+p {
+    font-size: 14px !important;
+    line-height: 23px;
 }
 
+h2.page_title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.page_content div#page_box_main div#page_box {
+    padding: 30px 15px 40px;
+}
+.audio_box ul.audio-list li.audio-item .info img {
+    width: 50px;
+}
+
+.audio_box ul.audio-list li.audio-item .info h6.audio-title {
+    font-size: 15px;
+}
+
+.audio_box ul.audio-list li.audio-item a.audio-link p.audio-artist {font-size: 12px !important;}
+
+.audio_box ul.audio-list li.audio-item a.audio-link .play i {
+    font-size: 13px;
+}
+
+.audio_box ul.audio-list li.audio-item a.audio-link .play {
+    width: 45px;
+    height: 40px;
+    line-height: 36px;
+}
 
 }
 
 
 
  
+
+@media(max-width:480px){
+
+    ul.video-list li.video-item {
+    width: calc(100% / 2);
+}
+.audio_box ul.audio-list li.audio-item {
+    width: calc(100% / 1);
+}
+
+
+}

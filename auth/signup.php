@@ -1,4 +1,4 @@
- <?php include $_SERVER['DOCUMENT_ROOT'] . '/wordpress_projects/mfel/auth/include/header.php'; ?>
+ <?php include __DIR__ .  '/../auth/include/header.php'; ?>
 
 
   <div id="main-box" style="background-image: url('<?php echo SITE_URL; ?>assets/images/big_bg.png');">
@@ -42,4 +42,4 @@
     </div>
 
     
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/wordpress_projects/mfel/auth/include/footer.php'; ?>
+<?php include __DIR__ .  '/../auth/include/footer.php'; ?>

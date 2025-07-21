@@ -1,10 +1,4 @@
-
-<?php include 'includes/head.php';?>
-
-
-
-
-
-
-
-    <?php include 'includes/footer.php';?>
+<?php
+    header('Location: auth/landing.php');
+    exit;
+?>

@@ -24,16 +24,36 @@ include __DIR__ . '/../includes/head.php';
         <h3>How's your stress-o-meter today?</h3>
         <p>Feeling like you're about to explode,<br> or is everything chill?</p>
         <div class="stress-box">
-          <button class="stress-icons" style="background-image: url('<?php echo SITE_URL; ?>assets/images/metal_buttn_bg.png');" data-angle="-115" data-color="#ff4d4d" onclick="stressMood2(this)"></button>
-          <button class="stress-icons" style="background-image: url('<?php echo SITE_URL; ?>assets/images/water_buttn_bg.png');" data-angle="-70" data-color="#ff8c1a" onclick="stressMood2(this)"></button>
-          <button class="stress-icons active" style="background-image: url('<?php echo SITE_URL; ?>assets/images/wood_buttn_bg.png');" data-angle="-21" data-color="#ffd700" onclick="stressMood2(this)"></button>
-          <button class="stress-icons" style="background-image: url('<?php echo SITE_URL; ?>assets/images/fire_buttn_bg.png');" data-angle="22" data-color="#9acd32" onclick="stressMood2(this)"></button>
-          <button class="stress-icons" style="background-image: url('<?php echo SITE_URL; ?>assets/images/earth_buttn_bg.png');" data-angle="70" data-color="#32cd32" onclick="stressMood2(this)"></button>
-          <button class="stress-icons" style="background-image: url('<?php echo SITE_URL; ?>assets/images/button_bg.png');" data-angle="115" data-color="#32cd32" onclick="stressMood2(this)"></button>
+          <button class="stress-icons" id="stressMood2" style="background-image: url('<?php echo SITE_URL; ?>assets/images/metal_buttn_bg.png');" data-angle="-115" data-color="#ff4d4d" onclick="stressMood2(this)"></button>
+          <button class="stress-icons" id="stressMood2"  style="background-image: url('<?php echo SITE_URL; ?>assets/images/water_buttn_bg.png');" data-angle="-70" data-color="#ff8c1a" onclick="stressMood2(this)"></button>
+          <button class="stress-icons active" id="stressMood2"  style="background-image: url('<?php echo SITE_URL; ?>assets/images/wood_buttn_bg.png');" data-angle="-21" data-color="#ffd700" onclick="stressMood2(this)"></button>
+          <button class="stress-icons" id="stressMood2"  style="background-image: url('<?php echo SITE_URL; ?>assets/images/fire_buttn_bg.png');" data-angle="22" data-color="#9acd32" onclick="stressMood2(this)"></button>
+          <button class="stress-icons"  id="stressMood2" style="background-image: url('<?php echo SITE_URL; ?>assets/images/earth_buttn_bg.png');" data-angle="70" data-color="#32cd32" onclick="stressMood2(this)"></button>
+          <button class="stress-icons"  id="stressMood2" style="background-image: url('<?php echo SITE_URL; ?>assets/images/button_bg.png');" data-angle="115" data-color="#32cd32" onclick="stressMood2(this)"></button>
         </div>
-        <button type="button" class="step-form btn btn-primary btn-sm stress-button-button" id="step-form_button" onclick="nextPage('moodPage')">Next</button>
+        <button type="button" class="step-form btn btn-primary btn-sm stress-button-button" id="step-form_button" onclick="buttonClick()">Next</button>
       </div>
     </div>
+
+    <script>
+      function buttonClick() {
+          // Get all buttons with the class 'stress-icons'
+          const allMoodButtons = document.querySelectorAll('.stress-icons');
+
+          // Check if any button has the 'active' class
+          const isActive = Array.from(allMoodButtons).some(btn => btn.classList.contains('done'));
+
+          if (isActive) {
+              nextPage('moodPage');
+          } else {
+              alert("Please select a stress level");
+          }
+      }
+
+
+
+
+    </script>
 
     <div id="moodPage" class="page hidden">
       <div class="inner_box">
@@ -182,36 +202,36 @@ include __DIR__ . '/../includes/head.php';
     
 
 
-  function updateMood(element) {
-        const angle = parseInt(element.getAttribute('data-angle'));
-        const color = element.getAttribute('data-color');
-        const pointer = document.getElementById('moodPointer');
-        let iconMood = element.classList[1];
+    function updateMood(element) {
+          const angle = parseInt(element.getAttribute('data-angle'));
+          const color = element.getAttribute('data-color');
+          const pointer = document.getElementById('moodPointer');
+          let iconMood = element.classList[1];
 
-        // ✅ Remove 'active' from all mood buttons
-        const allMoodButtons = document.querySelectorAll('.mood-button');
-        allMoodButtons.forEach(btn => btn.classList.remove('active'));
+          // ✅ Remove 'active' from all mood buttons
+          const allMoodButtons = document.querySelectorAll('.mood-button');
+          allMoodButtons.forEach(btn => btn.classList.remove('active'));
 
-        // ✅ Add 'active' to clicked element
-        element.classList.add('active');
+          // ✅ Add 'active' to clicked element
+          element.classList.add('active');
 
-        console.log("Mood selected:",  {
-          angle: angle,
-          color: color,
-          element: element
-        });
+          console.log("Mood selected:",  {
+            angle: angle,
+            color: color,
+            element: element
+          });
 
-        // ✅ Rotate pointer
-        pointer.style.transform = `translate(-50%, -100%) rotate(${angle}deg)`;
+          // ✅ Rotate pointer
+          pointer.style.transform = `translate(-50%, -100%) rotate(${angle}deg)`;
 
-        // ✅ Optional: change pointer color (if needed)
-        // pointer.style.backgroundColor = color;
+          // ✅ Optional: change pointer color (if needed)
+          // pointer.style.backgroundColor = color;
 
-  }
-
-
+    }
 
 
+
+          
     
     function stressMood2(element) {
             
@@ -224,11 +244,20 @@ include __DIR__ . '/../includes/head.php';
             const allMoodButtons = document.querySelectorAll('.stress-icons'); // or your actual class
             allMoodButtons.forEach(btn => btn.classList.remove('active'));
 
+            // ✅ Remove 'active' from all mood buttons
+            const allMoodButtons2 = document.querySelectorAll('.stress-icons'); // or your actual class
+            allMoodButtons2.forEach(btn => btn.classList.remove('done'));
+
+
             // ✅ Add 'active' to clicked one
+            element.classList.add('done');
+             // ✅ Add 'active' to clicked one
             element.classList.add('active');
 
             pointer.style.transform = `translate(-50%, -100%) rotate(${angle}deg)`;
 
+            
+            
     }
     
 

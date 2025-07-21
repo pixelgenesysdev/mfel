@@ -96,14 +96,24 @@ include __DIR__ . '/../includes/head.php';
 
         <!-- Welcome Section -->
         <div class="chatbot-welcome" id="welcomeSection">
-            <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+            <!-- <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
             <dotlottie-player 
                 src="https://lottie.host/ae24a0b3-d8dc-428b-9cec-444c04a3f42b/DiZs6OkQog.lottie"
                 background="transparent"
                 speed="1"
                 style="width: 450px; height: 450px"
                 loop autoplay >
-            </dotlottie-player>
+            </dotlottie-player> -->
+
+            <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+            <dotlottie-wc 
+            src="https://lottie.host/46885452-0dad-4584-bc1f-040aee76f2fe/mOD0WkeQlZ.lottie" 
+            style="width: 350px;height: 350px" 
+            speed="1"
+            autoplay loop
+            ></dotlottie-wc>
+
+
             <h1>Ai Chat Bot</h1>
             <p>Got a question? Need advice? Let's chat! Ask me anything and I'll help you out!</p>
             <div class="input-box">

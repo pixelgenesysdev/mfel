@@ -1,10 +1,81 @@
 
     <style>
 
+            .pentagon-btn .bg {
+                    position: relative;
+                    width: 90%;
+                    height: 94%;
+                    top: -3px;
+            }
+            .pentagon-btn .bg .taphere img {
+                width: 105%;
+                left: -4px;
+                height: 101%;
+                top: -1px;
+            }
+            .taphere img {z-index: 1;}
+            .complete dotlottie-wc {
+                width: 70px !important;
+                z-index: 1;
+                height: 70px !important;
+                position: absolute;
+                top: 45%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+            }
+            .pentagon-btn .bg img {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform-origin: center;
+                transform: scale(1);
+                transition: 1.5s;
+            }
+
+            .pentagon-btn .bg .taphere img {
+                transform: scale(1);
+            }
+            .pentagon-btn.complete .bg .complete img {
+                width: 105%;
+                left: -4px;
+            }
+
+            .pentagon-btn.complete .bg .taphere img {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            .pentagon-btn.complete .bg .complete img {
+                transform: scale(1);
+            }
+
+
+
+            .pentagon-btn.complete {
+                animation: buttonscal 3s linear 1s 1 normal;
+            }
+
+            @keyframes buttonscal { 
+                0% {
+                    transform: scaleX(1.2) scaleY(1.1);
+                }
+
+                100% {
+                    transform: scaleX(6.2) scaleY(6.1);
+                }
+            }
+            
+
+            h2.page_title,.content h3,.content p.text{
+                transition:2.5s;
+            }
+
         .pentagon-container {
             position: relative;
-            width: 260px;
-            height: 250px;
+            width: 220px;
+            height: 210px;
             overflow: visible;
             margin-top: 5rem;
             transition: 1.5s;
@@ -165,25 +236,8 @@
             clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
         }
 
-        .pentagon-btn:after {
-            content: '';
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            background-image: url(https://94dfd9d8685d.ngrok-free.app/wordpress_projects/mfel/assets/images/taphere.png);
-            transition: 0.5s;
-            top: 48%;
-            transform: translate(-50%, -50%) scaleY(0.99) scaleX(0.86);
-            left: 50%;
-            clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
-            background-size: 100% 110%;
-            z-index: 2;
-        }
-
-        .pentagon-btn.complete:after {
-            background-image: url(https://94dfd9d8685d.ngrok-free.app/wordpress_projects/mfel/assets/images/startbutton.png);
-            transition: 0.5s;
-        }
+        
+        
 
         .pentagon-btn .icon {
             background: #ececec;
@@ -214,11 +268,28 @@
                 <div class="icon icon-4"><img src="<?php echo SITE_URL; ?>assets/images/water-button-icon.png" alt=""></div>
                 <div class="icon icon-5"><img src="<?php echo SITE_URL; ?>assets/images/wood-button-icon.png" alt=""></div>
             </div>
+            <div class="bg">
+                <div class="complete">
+                    
+                <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+                <dotlottie-wc 
+                src="https://lottie.host/99d6399d-bfc3-4821-9932-fa888a636be5/S9dMmvqgJT.lottie" 
+                style="width: 300px;height: 300px" speed="1" 
+                autoplay loop></dotlottie-wc>
+
+                <img src="<?php echo SITE_URL; ?>assets/images/startbutton.png" alt=""></div>    
+                <div class="taphere"><img src="<?php echo SITE_URL; ?>assets/images/taphere.png" alt=""></div>
+            </div>
         </button>
     </div>
 
     <script>
         const btn = document.getElementById('visualizeBtn');
+        const page_h2 = document.querySelector('h2.page_title');
+        const page_h3 = document.querySelector('.content h3');
+        const page_p = document.querySelector('.content p.text');
+
+
 
         btn.addEventListener('click', (event) => {
             event.preventDefault(); // Prevent any default behavior
@@ -232,6 +303,7 @@
             const text = btn.querySelector('.text');
             if (btn.classList.contains('active')) {
                 text.innerHTML = 'Start<br>Visualizing';
+                btn.style.pointerEvents = "none";
             } else {
                 text.innerHTML = 'Tap Here<br><span style="font-size:14px;">Click to visualize</span>';
             }
@@ -239,18 +311,25 @@
             // Redirect after 2 seconds to allow animations to complete
             setTimeout(() => {
                 console.log('Redirecting...'); // Debug: Confirm redirect trigger
-                // window.location.href = '<?php echo SITE_URL; ?>pages/self_vs_edit.php'; // Replace with actual URL for testing
-            }, 4000); // 2000ms = 2 seconds
+                    window.location.href = '<?php echo SITE_URL; ?>pages/self_vs_edit.php'; // Replace with actual URL for testing
+            }, 5000); // 2000ms = 2 seconds
            
             if (btn.classList.contains('active')) {
                 setTimeout(() => {
                     btn.classList.add('complete');
+                     page_h2.style.opacity = '0';
+                     page_h3.style.opacity = '0';
+                     page_p.style.opacity = '0';
                 }, 3000);
             }
             else{
                     btn.classList.remove('complete');
+                        page_h2.style.display = 'block';
+                        page_h3.style.display = 'block';
+                        page_p.style.display = 'block';
             }
 
+        
             
         });
     </script>

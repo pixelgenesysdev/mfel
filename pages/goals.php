@@ -17,9 +17,7 @@ include __DIR__ . '/../includes/head.php';
                         <div class="icon"><img src="<?php echo SITE_URL; ?>assets/images/fire_icon_white.png" alt=""></div>
                         <h3>Balance my fire element</h3>
                     </div>
-                    <div class="rightop">
-                        <i class="fa-solid fa-ellipsis"></i>
-                    </div>
+                    
                 </div>
                 <div class="card-body">
                     <div class="sideleft">
@@ -42,9 +40,7 @@ include __DIR__ . '/../includes/head.php';
                         <div class="icon"><img src="<?php echo SITE_URL; ?>assets/images/water_icon_white.png" alt=""></div>
                         <h3>Balance my water element</h3>
                     </div>
-                    <div class="rightop">
-                        <i class="fa-solid fa-ellipsis"></i>
-                    </div>
+                    
                 </div>
                 <div class="card-body">
                     <div class="sideleft">
@@ -67,9 +63,7 @@ include __DIR__ . '/../includes/head.php';
                         <div class="icon"><img src="<?php echo SITE_URL; ?>assets/images/metal_icon_white.png" alt=""></div>
                         <h3>Balance my metal element</h3>
                     </div>
-                    <div class="rightop">
-                        <i class="fa-solid fa-ellipsis"></i>
-                    </div>
+                    
                 </div>
                 <div class="card-body">
                     <div class="sideleft">
@@ -92,9 +86,7 @@ include __DIR__ . '/../includes/head.php';
                         <div class="icon"><img src="<?php echo SITE_URL; ?>assets/images/wood_icon_white.png" alt=""></div>
                         <h3>Balance my wood element</h3>
                     </div>
-                    <div class="rightop">
-                        <i class="fa-solid fa-ellipsis"></i>
-                    </div>
+                    
                 </div>
                 <div class="card-body">
                     <div class="sideleft">

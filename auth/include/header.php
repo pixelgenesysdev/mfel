@@ -1,4 +1,4 @@
-<?php include_once($_SERVER['DOCUMENT_ROOT'] . '/wordpress_projects/mfel/global.inc.php'); ?>
+ <?php include __DIR__ .  '/../../global.inc.php'; ?>
 
 
 <!DOCTYPE html>
