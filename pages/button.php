@@ -14,14 +14,19 @@
                 top: -1px;
             }
             .taphere img {z-index: 1;}
-            .complete dotlottie-wc {
-                width: 70px !important;
+
+            .complete .lottie-animation {
+                width: 31% !important;
                 z-index: 1;
-                height: 70px !important;
+                height: 31%!important;
                 position: absolute;
                 top: 45%;
                 left: 50%;
-                transform: translate(-50%,-50%);
+                transform: translate(-50%, -50%);
+            }
+            .complete dotlottie-wc {
+                width: 100% !important;
+                height: 100% !important;
             }
             .pentagon-btn .bg img {
                 width: 100%;
@@ -270,13 +275,13 @@
             </div>
             <div class="bg">
                 <div class="complete">
-                    
-                <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
-                <dotlottie-wc 
-                src="https://lottie.host/99d6399d-bfc3-4821-9932-fa888a636be5/S9dMmvqgJT.lottie" 
-                style="width: 300px;height: 300px" speed="1" 
-                autoplay loop></dotlottie-wc>
-
+                <div class="lottie-animation">    
+                    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+                    <dotlottie-wc 
+                    src="https://lottie.host/99d6399d-bfc3-4821-9932-fa888a636be5/S9dMmvqgJT.lottie" 
+                    style="width: 300px;height: 300px" speed="1" 
+                    autoplay loop></dotlottie-wc>
+                </div>
                 <img src="<?php echo SITE_URL; ?>assets/images/startbutton.png" alt=""></div>    
                 <div class="taphere"><img src="<?php echo SITE_URL; ?>assets/images/taphere.png" alt=""></div>
             </div>
@@ -311,7 +316,7 @@
             // Redirect after 2 seconds to allow animations to complete
             setTimeout(() => {
                 console.log('Redirecting...'); // Debug: Confirm redirect trigger
-                    window.location.href = '<?php echo SITE_URL; ?>pages/self_vs_edit.php'; // Replace with actual URL for testing
+                  //  window.location.href = '<?php echo SITE_URL; ?>pages/self_vs_edit.php'; // Replace with actual URL for testing
             }, 5000); // 2000ms = 2 seconds
            
             if (btn.classList.contains('active')) {

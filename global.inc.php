@@ -4,7 +4,7 @@ $host = $_SERVER['HTTP_HOST'];
 // Manually set project folder path
 $project_folder = '/wordpress_projects/mfel/';
 
-$base_url = "https://" . $host . $project_folder;
+$base_url = "http://" . $host . $project_folder;
 
 
 

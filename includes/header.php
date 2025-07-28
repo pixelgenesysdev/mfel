@@ -4,9 +4,62 @@
         </div>
         <div class="right_box">
             <ul class="tab_item">
-                <li class="item-list"><a href="javascript:void(0)"><i class="fa-solid fa-bell"></i></a></li>
+                <li id="notification" class="item-list"><a href="javascript:void(0)" onclick="notificationopen()"><i class="fa-solid fa-bell"></i></a></li>
                 <li id="humberger" class="item-list mobileshow"><a onclick="humbergeropen()" href="javascript:void(0)"><i class="fa-solid fa-bars"></i></a></li>
             </ul>
+            
+            <div class="notification_box">
+                <div class="noti_head d-flex coloumn-direction-column">
+                    <h4 class="noti_title">Notifications</h4>
+                     <a href="javascript:void(0)">see all</a>
+                </div>
+                    <ul class="noti_list"> 
+                        <li class="noti_item d-flex coloumn-direction-column" style="list-style: none" onclick="javascript:void(0)">
+                            <div class="noti_icon"><img src="<?php echo SITE_URL; ?>assets/images/fire_icon.png" alt=""></div>
+                            <div class="cont_box" >
+                                <h6 class="noti_title">Notification Title</h6>
+                                <div class="noti_text">message here....</div>
+                                <span class="noti_time">2 mins ago</span>
+                            </div>
+                        </li>
+                        <li class="noti_item d-flex coloumn-direction-column" style="list-style: none" onclick="javascript:void(0)">
+                            <div class="noti_icon"><img src="<?php echo SITE_URL; ?>assets/images/metal_icon.png" alt=""></div>
+                            <div class="cont_box" >
+                                <h6 class="noti_title">Notification Title</h6>
+                                <div class="noti_text">message here....</div>
+                                <span class="noti_time">2 mins ago</span>
+                            </div>
+                        </li>
+                        <li class="noti_item d-flex coloumn-direction-column" style="list-style: none" onclick="javascript:void(0)">
+                            <div class="noti_icon"><img src="<?php echo SITE_URL; ?>assets/images/water_icon.png" alt=""></div>
+                            <div class="cont_box" >
+                                <h6 class="noti_title">Notification Title</h6>
+                                <div class="noti_text">message here....</div>
+                                <span class="noti_time">2 mins ago</span>
+                            </div>
+                        </li>
+                        <li class="noti_item d-flex coloumn-direction-column" style="list-style: none" onclick="javascript:void(0)">
+                            <div class="noti_icon"><img src="<?php echo SITE_URL; ?>assets/images/wood_icon.png" alt=""></div>
+                            <div class="cont_box" >
+                                <h6 class="noti_title">Notification Title</h6>
+                                <div class="noti_text">message here....</div>
+                                <span class="noti_time">2 mins ago</span>
+                            </div>
+                        </li>
+                        <li class="noti_item d-flex coloumn-direction-column" style="list-style: none" onclick="javascript:void(0)">
+                            <div class="noti_icon"><img src="<?php echo SITE_URL; ?>assets/images/fire_icon.png" alt=""></div>
+                            <div class="cont_box" >
+                                <h6 class="noti_title">Notification Title</h6>
+                                <div class="noti_text">message here....</div>
+                                <span class="noti_time">2 mins ago</span>
+                            </div>
+                        </li>
+                        
+
+                </ul>
+            </div>
+            
+            
             <div class="user_box mobilehide">
                 <img src="<?php echo SITE_URL; ?>assets/images/user_defaul_image.png" alt="User Profile" class="user_profile">
                 
@@ -20,6 +73,8 @@
                     </div>
                 </div>
             </div>
+
+
 
           
         </div>
@@ -118,6 +173,24 @@
         menu.style.transform = "translateX(100%)";
     }
 
+
+    function notificationopen() {
+        let humberger = document.getElementById("notification");
+        let menu = document.getElementsByClassName("notification_box")[0];
+        menu.classList.toggle("active");
+
+        if (menu.classList.contains("active")) {
+            menu.style.display = "block";
+            menu.style.opacity = "1";
+            return;
+        } else {
+            menu.style.display = "none";
+            menu.style.opacity = "0";
+        }
+        console.log(menu);
+
+    }
+
 </script>
 
 
@@ -134,5 +207,7 @@
      .water.card .card_inner{
         background-image: url(<?php echo SITE_URL; ?>assets/images/water_card_bg.png);
     }
+
+
 </style>
 
